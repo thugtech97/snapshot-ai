@@ -1,4 +1,4 @@
-# SnapshotAI by SourceU
+# SnapshotAI
 
 **SnapshotAI** is a Chrome extension that allows you to easily capture snapshots of your screen, crop the image, and interact with OpenAI's API to analyze the content of the image. It leverages the power of AI to help you gain insights from any screenshot.
 
@@ -79,4 +79,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 ### Contact Information:
-- **SourceU Team**: [sourceu.ai](https://sourceu.ai)
+- **Jude E.**: [hey-jude](https://hey-jude.vercel.app)
