@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>SnapshotAI</title>
+  <link rel="stylesheet" href="popup.css" />
+  <style>
+    html,body {
+      margin: 0;
+      padding: 12px;
+      width: 480px; 
+      height: 600px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: #f7f7f8;
+      overflow: hidden;
+    }
+    h3 {
+      margin: 0 0 8px 0;
+      font-size: 18px;
+    }
+    button {
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 0;
+      background: #0b84ff;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .row {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .ghost {
+      background: transparent;
+      color: #0b84ff;
+      border: 1px solid rgba(11, 132, 255, 0.14);
+    }
+    canvas {
+      display: block;
+      margin-top: 10px;
+      max-width: 100%;
+      border-radius: 6px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    .hint {
+      margin-top: 8px;
+      color: #666;
+      font-size: 13px;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 10px;
+      background: #f0f4f8;
+      border-radius: 8px;
+      height: 200px;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
+
+    #loading {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    #loading .spinner {
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: 4px solid #0b84ff;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h3>SnapshotAI by SourceU</h3>
+
+  <div class="row">
+    <button id="capture">Take Snapshot</button>
+    <button id="clear" class="ghost">Clear</button>
+  </div>
+
+  <canvas id="canvas" width="300" height="180" aria-label="Snapshot preview"></canvas>
+
+  <div class="row" style="margin-top:8px">
+    <button id="crop" class="ghost" style="flex:1">Crop</button>
+    <button id="download" class="ghost" style="flex:1">Retrieve Response</button>
+  </div>
+
+  <div id="loading">
+    <div class="spinner"></div>
+    <p>Loading...</p>
+  </div>
+
+  <div id="result">The result from OpenAI will be displayed here.</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
